@@ -5,7 +5,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -13,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 
 import logo from "@assets/images/logo.svg";
+import { Link } from "react-router-dom";
 
 export default function SignUpScreen() {
   const handleSubmit = (event) => {
@@ -28,17 +28,14 @@ export default function SignUpScreen() {
   return (
     <Grid container component="main" sx={{ height: "100vh" }}>
       <CssBaseline />
+      {/* left */}
       <Grid
         item
         xs={false}
         sm={6}
         md={4}
         sx={{
-          // backgroundImage: "url(https://source.unsplash.com/random)",
-          backgroundRepeat: "no-repeat",
           backgroundColor: "#9EDBD7",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
         <Box sx={{ height: "100%", display: "flex", justifyContent: "center" }}>
@@ -51,6 +48,7 @@ export default function SignUpScreen() {
           />
         </Box>
       </Grid>
+      {/* right */}
       <Grid
         item
         xs={12}
@@ -74,9 +72,6 @@ export default function SignUpScreen() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -87,28 +82,50 @@ export default function SignUpScreen() {
             sx={{ mt: 1 }}
           >
             <TextField
+              id="email"
+              name="name"
+              label="First Name"
               margin="normal"
+              autoComplete="given-name"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
             />
             <TextField
+              id="username"
+              name="name"
+              label="Username"
+              margin="normal"
+              autoComplete="username"
+              required
+              fullWidth
+            />
+            <TextField
+              id="email"
+              name="email"
+              label="Email Address"
+              type="email"
+              autoComplete="email"
               margin="normal"
               required
               fullWidth
+            />
+            <TextField
+              id="password"
               name="password"
               label="Password"
               type="password"
-              id="password"
-              autoComplete="current-password"
+              margin="normal"
+              required
+              fullWidth
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+            <TextField
+              id="confirmpassword"
+              name="confirmpassword"
+              label="Confirm Password"
+              type="password"
+              margin="normal"
+              required
+              fullWidth
             />
             <Button
               type="submit"
@@ -120,14 +137,12 @@ export default function SignUpScreen() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                {/* <Link href="#" variant="body2">
                   Forgot password?
-                </Link>
+                </Link> */}
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+                <Link to="/login">Already have an account? Login</Link>
               </Grid>
             </Grid>
           </Box>
