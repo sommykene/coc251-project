@@ -29,7 +29,7 @@ import logo from "@assets/images/logo.svg";
 import textLogo from "@assets/images/textlogo.png";
 import profile from "@assets/images/profile.png";
 import { Avatar } from "@mui/material";
-import { Language, Settings } from "@mui/icons-material";
+import { Language, Settings, Translate } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -177,6 +177,14 @@ export default function Sidebar() {
                   <Games />
                 </ListItemIcon>
                 <ListItemText primary="Practice" />
+              </ListItem>
+            </StyledLink>
+            <StyledLink to="vocabulary">
+              <ListItem button key="Vocabulary">
+                <ListItemIcon>
+                  <Translate />
+                </ListItemIcon>
+                <ListItemText primary="Vocabulary" />
               </ListItem>
             </StyledLink>
             <StyledLink to="culture">

@@ -5,6 +5,8 @@ import CultureHome from "@screens/main/CultureHome";
 import LessonHome from "@screens/main/LessonsHome";
 import PracticeHome from "@screens/main/PracticeHome";
 import ResourcesHome from "@screens/main/ResourcesHome";
+import Home from "@screens/main/Home";
+import VocabHome from "@screens/main/VocabHome";
 
 export default function ContentContainer() {
   return (
@@ -18,10 +20,12 @@ export default function ContentContainer() {
       }}
     >
       <Routes>
-        <Route path="/lessons" element={<LessonHome />} />
-        <Route path="/practice" element={<PracticeHome />} />
-        <Route path="/culture" element={<CultureHome />} />
-        <Route path="/resources" element={<ResourcesHome />} />
+        <Route index element={<Home />} />
+        <Route path="lessons" element={<LessonHome />} />
+        <Route path="practice" element={<PracticeHome />} />
+        <Route path="vocabulary" element={<VocabHome />} />
+        <Route path="culture" element={<CultureHome />} />
+        <Route path="resources" element={<ResourcesHome />} />
       </Routes>
     </Box>
   );
