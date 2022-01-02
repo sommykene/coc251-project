@@ -16,7 +16,7 @@ export default function ContentContainer() {
         flexGrow: 1,
         p: 3,
         bgcolor: "#E9EDF0",
-        height: "100%",
+        // height: "100vh",
       }}
     >
       <Routes>
