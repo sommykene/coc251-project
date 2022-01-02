@@ -195,14 +195,6 @@ export default function Sidebar() {
                 <ListItemText primary="Culture" />
               </ListItem>
             </StyledLink>
-            <StyledLink to="resources">
-              <ListItem button key="Resources">
-                <ListItemIcon>
-                  <Article />
-                </ListItemIcon>
-                <ListItemText primary="Resources" />
-              </ListItem>
-            </StyledLink>
           </List>
           <List>
             <ListItem button key="Settings">

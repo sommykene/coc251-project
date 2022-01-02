@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import CultureHome from "@screens/main/CultureHome";
 import LessonHome from "@screens/main/LessonsHome";
 import PracticeHome from "@screens/main/PracticeHome";
-import ResourcesHome from "@screens/main/ResourcesHome";
 import Home from "@screens/main/Home";
 import VocabHome from "@screens/main/VocabHome";
 
@@ -25,7 +24,6 @@ export default function ContentContainer() {
         <Route path="practice" element={<PracticeHome />} />
         <Route path="vocabulary" element={<VocabHome />} />
         <Route path="culture" element={<CultureHome />} />
-        <Route path="resources" element={<ResourcesHome />} />
       </Routes>
     </Box>
   );
