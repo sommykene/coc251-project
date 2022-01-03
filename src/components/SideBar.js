@@ -163,12 +163,12 @@ export default function Sidebar() {
                 <ListItemText primary="Home" />
               </ListItem>
             </StyledLink>
-            <StyledLink to="lessons">
-              <ListItem button key="Lessons">
+            <StyledLink to="learn">
+              <ListItem button key="Learn">
                 <ListItemIcon>
                   <School />
                 </ListItemIcon>
-                <ListItemText primary="Lessons" />
+                <ListItemText primary="Learn" />
               </ListItem>
             </StyledLink>
             <StyledLink to="practice">

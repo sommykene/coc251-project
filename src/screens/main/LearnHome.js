@@ -5,7 +5,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
 import lessonImg from "@assets/images/lessonImg.svg";
-import { Button } from "@mui/material";
+import { Avatar, Button } from "@mui/material";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -15,18 +15,39 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import LockOpen from "@mui/icons-material/LockOpen";
 import Lock from "@mui/icons-material/Lock";
 import DoneAll from "@mui/icons-material/DoneAll";
+import { Done } from "@mui/icons-material";
+import CourseInfo from "@components/CourseInfo";
+import InfoOutlined from "@mui/icons-material/InfoOutlined";
+
+const Level = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+  marginBottom: "20px",
+}));
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
-  height: "150px",
+  height: "300px",
 }));
 
-export default function LessonsHome() {
+const MoreCoursesItem = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+  height: "100px",
+}));
+
+export default function LearnHome() {
   return (
     <Box sx={{ flexGrow: 1 }}>
+      <Level>Level: Newcomer</Level>
+
       <Grid container spacing={2} sx={{ mb: 3 }}>
         <Grid item xs={8}>
           <Item
@@ -40,7 +61,7 @@ export default function LessonsHome() {
           >
             <Box
               sx={{
-                textAlign: "right",
+                // textAlign: "right",
                 p: 2,
                 display: "flex",
                 flexDirection: "row",
@@ -52,6 +73,10 @@ export default function LessonsHome() {
               <Box sx={{ flexGrow: 1, mx: 5 }}>
                 <h1>Lesson 2: ABChD</h1>
                 <h3>Intro to Abidịị</h3>
+                <Typography>Where are we going?</Typography>
+                <Typography>Here you'll learn:</Typography>
+                <Typography>- the difference between wo and wohin</Typography>
+                <Typography>- when to use fahren and gehen</Typography>
               </Box>
               <Box>
                 <Button
@@ -69,7 +94,10 @@ export default function LessonsHome() {
         </Grid>
       </Grid>
       {/* Extras */}
-      <Typography>All Lessons</Typography>
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        <h1>Introduction to ABChD</h1>
+        <CourseInfo />
+      </Box>
 
       <Box>
         <Accordion>
@@ -78,14 +106,27 @@ export default function LessonsHome() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
+            <Box sx={{ mr: 2 }}>
+              <Avatar
+                sx={{ border: "1px solid black" }}
+                alt="Remy Sharp"
+                src={lessonImg}
+              />
+            </Box>
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
                 width: "100%",
+                alignItems: "center",
               }}
             >
-              <Typography>Lesson 1: Wohin fahren wir? part 1</Typography>
+              <Box>
+                <Typography>Lesson 1</Typography>
+                <Typography>
+                  Wohin fahren wir? part 1 - completed lesson and review
+                </Typography>
+              </Box>
               <DoneAll sx={{ mx: 2 }} />
             </Box>
           </AccordionSummary>
@@ -117,7 +158,67 @@ export default function LessonsHome() {
                   textAlign: "center",
                 }}
               >
-                Review Lesson Again
+                Review Lesson Again +5XP
+              </Box>
+            </Box>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Box sx={{ mr: 2 }}>
+              <Avatar
+                sx={{ border: "1px solid black" }}
+                alt="Remy Sharp"
+                src={lessonImg}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "100%",
+                alignItems: "center",
+              }}
+            >
+              <Typography>
+                Lesson 2: Wohin fahren wir? part 1 - Completed lesson not review
+              </Typography>
+              <Done sx={{ mx: 2 }} />
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>Where are we going?</Typography>
+            <Typography>Here you'll learn:</Typography>
+            <Typography>- the difference between wo and wohin</Typography>
+            <Typography>- when to use fahren and gehen</Typography>
+            <Box sx={{ display: "flex", mt: 2 }}>
+              <Box
+                sx={{
+                  bgcolor: "orange",
+                  mr: 1,
+                  p: 1,
+                  flex: 1,
+                  borderRadius: 1,
+                  textAlign: "center",
+                }}
+              >
+                View Vocab
+              </Box>
+              <Box
+                sx={{
+                  bgcolor: "#ffd62f",
+                  ml: 1,
+                  p: 1,
+                  flex: 1,
+                  borderRadius: 1,
+                  textAlign: "center",
+                }}
+              >
+                Review Lesson +10XP
               </Box>
             </Box>
           </AccordionDetails>
@@ -135,7 +236,10 @@ export default function LessonsHome() {
                 width: "100%",
               }}
             >
-              <Typography>Lesson 2: Wohin fahren wir? part 1</Typography>
+              <Typography>
+                Lesson 3: Wohin fahren wir? part 1 - not started lesson / no
+                option to review yet
+              </Typography>
               <LockOpen sx={{ mx: 2 }} />
             </Box>
           </AccordionSummary>
@@ -154,7 +258,7 @@ export default function LessonsHome() {
                 textAlign: "center",
               }}
             >
-              Start Lesson
+              Start Lesson + 10XP
             </Box>
           </AccordionDetails>
         </Accordion>
@@ -172,7 +276,10 @@ export default function LessonsHome() {
                 width: "100%",
               }}
             >
-              <Typography>Lesson 3: Wohin fahren wir? part 1</Typography>
+              <Typography>
+                Lesson 4: Wohin fahren wir? part 1 - lesson locked / complete
+                previous lesson
+              </Typography>
               <Lock sx={{ mx: 2 }} />
             </Box>
           </AccordionSummary>
@@ -181,6 +288,18 @@ export default function LessonsHome() {
             <Typography>Here you'll learn:</Typography>
             <Typography>- the difference between wo and wohin</Typography>
             <Typography>- when to use fahren and gehen</Typography>
+            <Box
+              sx={{
+                bgcolor: "#bdbdbd",
+                mt: 2,
+                p: 1,
+                flex: 1,
+                borderRadius: 1,
+                textAlign: "center",
+              }}
+            >
+              Complete Previous Lesson
+            </Box>
           </AccordionDetails>
         </Accordion>
         <Accordion>
@@ -197,7 +316,7 @@ export default function LessonsHome() {
                 width: "100%",
               }}
             >
-              <Typography>Lesson 4: Wohin fahren wir? part 1</Typography>
+              <Typography>Lesson 5: FINAL LESSON</Typography>
               <Lock sx={{ mx: 2 }} />
             </Box>
           </AccordionSummary>
@@ -206,8 +325,24 @@ export default function LessonsHome() {
             <Typography>Here you'll learn:</Typography>
             <Typography>- the difference between wo and wohin</Typography>
             <Typography>- when to use fahren and gehen</Typography>
+            <Box
+              sx={{
+                bgcolor: "#bdbdbd",
+                mt: 2,
+                p: 1,
+                flex: 1,
+                borderRadius: 1,
+                textAlign: "center",
+              }}
+            >
+              Complete Previous Lesson
+            </Box>
           </AccordionDetails>
         </Accordion>
+      </Box>
+
+      <Box sx={{ mt: 4 }}>
+        <MoreCoursesItem>View More Courses</MoreCoursesItem>
       </Box>
     </Box>
   );

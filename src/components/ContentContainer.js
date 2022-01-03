@@ -2,10 +2,11 @@ import { Menu } from "@mui/icons-material";
 import { Box, IconButton, Typography } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import CultureHome from "@screens/main/CultureHome";
-import LessonHome from "@screens/main/LessonsHome";
+import LearnHome from "@screens/main/LearnHome";
 import PracticeHome from "@screens/main/PracticeHome";
 import Home from "@screens/main/Home";
 import VocabHome from "@screens/main/VocabHome";
+import Dictionary from "@screens/main/Dictionary";
 
 export default function ContentContainer() {
   return (
@@ -20,7 +21,7 @@ export default function ContentContainer() {
     >
       <Routes>
         <Route index element={<Home />} />
-        <Route path="lessons" element={<LessonHome />} />
+        <Route path="learn" element={<LearnHome />} />
         <Route path="practice" element={<PracticeHome />} />
         <Route path="vocabulary" element={<VocabHome />} />
         <Route path="culture" element={<CultureHome />} />
