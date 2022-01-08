@@ -9,6 +9,7 @@ import {
   faQuoteLeft,
   faSpellCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link, Outlet } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -25,6 +26,17 @@ const Item = styled(Paper)(({ theme }) => ({
 const FaIcon = styled(FontAwesomeIcon)({
   fontSize: "5em",
 });
+
+const StyledLink = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+  color: "black",
+  display: "flex",
+  height: "100%",
+  flexDirection: "column",
+  justifyContent: "space-evenly",
+  "&:hover": { color: "pink", cursor: "pointer" },
+}));
+
 export default function VocabHome() {
   return (
     <Stack
@@ -38,13 +50,16 @@ export default function VocabHome() {
         <h1>All Lesson Vocab</h1>
       </Item>
       <Item>
-        <FaIcon icon={faSpellCheck} />
-        <h1>Dictionary</h1>
+        <StyledLink to="dictionary">
+          <FaIcon icon={faSpellCheck} />
+          <h1>Dictionary</h1>
+        </StyledLink>
       </Item>
       <Item>
         <FaIcon icon={faQuoteLeft} />
         <h1>Phrasebooks</h1>
       </Item>
+      <Outlet />
     </Stack>
   );
 }

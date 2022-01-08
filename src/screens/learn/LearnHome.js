@@ -267,7 +267,6 @@ export default function LearnHome() {
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
-            sx={{ bgcolor: "#e0e0e0" }}
           >
             <Box
               sx={{
@@ -283,7 +282,7 @@ export default function LearnHome() {
               <Lock sx={{ mx: 2 }} />
             </Box>
           </AccordionSummary>
-          <AccordionDetails sx={{ bgcolor: "#e0e0e0" }}>
+          <AccordionDetails>
             <Typography>Where are we going?</Typography>
             <Typography>Here you'll learn:</Typography>
             <Typography>- the difference between wo and wohin</Typography>
@@ -307,7 +306,6 @@ export default function LearnHome() {
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
-            sx={{ bgcolor: "#e0e0e0" }}
           >
             <Box
               sx={{
@@ -320,7 +318,7 @@ export default function LearnHome() {
               <Lock sx={{ mx: 2 }} />
             </Box>
           </AccordionSummary>
-          <AccordionDetails sx={{ bgcolor: "#e0e0e0" }}>
+          <AccordionDetails>
             <Typography>Where are we going?</Typography>
             <Typography>Here you'll learn:</Typography>
             <Typography>- the difference between wo and wohin</Typography>
