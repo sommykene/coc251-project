@@ -18,7 +18,48 @@ import DoneAll from "@mui/icons-material/DoneAll";
 import { Done } from "@mui/icons-material";
 import CourseInfo from "@components/CourseInfo";
 import InfoOutlined from "@mui/icons-material/InfoOutlined";
+import LessonAccordion from "./components/LessonAccordion";
 
+import CurrentLessonBlock from "@components/CurrentLessonBlock";
+
+const lessonData = [
+  {
+    title: "this is the title",
+    subtitle: "this is the subtitle",
+    objectives: ["learning 1", "learning 2"],
+    stages: {
+      lesson: true,
+      review: true,
+      locked: false,
+    },
+  },
+  {
+    title: "this is the title",
+    subtitle: "this is the subtitle",
+    objectives: ["learning 1", "learning 2"],
+    stages: {
+      lesson: true,
+      review: false,
+      locked: false,
+    },
+  },
+  {
+    title: "this is the title",
+    subtitle: "this is the subtitle",
+    objectives: ["learning 1", "learning 2"],
+    stages: {
+      lesson: false,
+      review: false,
+      locked: false,
+    },
+  },
+  {
+    title: "this is the title",
+    subtitle: "this is the subtitle",
+    objectives: ["learning 1", "learning 2"],
+    stages: { locked: true },
+  },
+];
 const Level = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -50,44 +91,7 @@ export default function LearnHome() {
 
       <Grid container spacing={2} sx={{ mb: 3 }}>
         <Grid item xs={8}>
-          <Item
-            sx={{
-              bgcolor: "#fff",
-              backgroundImage: `url(${lessonImg})`,
-              backgroundRepeat: "no-repeat",
-              backgroundOrigin: "border-box",
-              backgroundSize: "contain",
-            }}
-          >
-            <Box
-              sx={{
-                // textAlign: "right",
-                p: 2,
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                height: "100%",
-                alignItems: "center",
-              }}
-            >
-              <Box sx={{ flexGrow: 1, mx: 5 }}>
-                <h1>Lesson 2: ABChD</h1>
-                <h3>Intro to Abidịị</h3>
-                <Typography>Where are we going?</Typography>
-                <Typography>Here you'll learn:</Typography>
-                <Typography>- the difference between wo and wohin</Typography>
-                <Typography>- when to use fahren and gehen</Typography>
-              </Box>
-              <Box>
-                <Button
-                  variant="contained"
-                  sx={{ bgcolor: "#ffd62f", color: "black" }}
-                >
-                  Start Lesson
-                </Button>
-              </Box>
-            </Box>
-          </Item>
+          <CurrentLessonBlock />
         </Grid>
         <Grid item xs={4}>
           <Item>xs=4</Item>
@@ -99,6 +103,11 @@ export default function LearnHome() {
         <CourseInfo />
       </Box>
 
+      <Box>
+        <LessonAccordion data={lessonData} />
+      </Box>
+
+      {/*
       <Box>
         <Accordion>
           <AccordionSummary
@@ -338,7 +347,7 @@ export default function LearnHome() {
           </AccordionDetails>
         </Accordion>
       </Box>
-
+            */}
       <Box sx={{ mt: 4 }}>
         <MoreCoursesItem>View More Courses</MoreCoursesItem>
       </Box>

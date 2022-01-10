@@ -9,6 +9,7 @@ import { Box, Button } from "@mui/material";
 import profile from "@assets/images/profile.png";
 import ActivityTimeline from "@components/ActivityTimeline";
 import lessonImg from "@assets/images/lessonImg.svg";
+import CurrentLessonBlock from "@components/CurrentLessonBlock";
 
 const Img = styled("img")({
   margin: "auto",
@@ -37,39 +38,7 @@ export default function Home() {
       {/* main */}
       <Grid container item spacing={2} md={12} lg={9}>
         <Grid item xs={9} sx={{ height: "50%" }}>
-          <Item
-            sx={{
-              bgcolor: "#fff",
-              backgroundImage: `url(${lessonImg})`,
-              backgroundRepeat: "no-repeat",
-              backgroundOrigin: "border-box",
-              backgroundSize: "contain",
-            }}
-          >
-            <Box
-              sx={{
-                textAlign: "right",
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "100%",
-              }}
-            >
-              <Box>
-                <h1>Lesson 2: ABChD</h1>
-                <h3>Intro to Abidịị</h3>
-              </Box>
-              <Box>
-                <Button
-                  variant="contained"
-                  sx={{ bgcolor: "#ffd62f", color: "black" }}
-                >
-                  Start Lesson
-                </Button>
-              </Box>
-            </Box>
-          </Item>
+          <CurrentLessonBlock />
         </Grid>
         <Grid item xs={3} container sx={{ height: "50%" }}>
           <Grid item xs container direction="column" spacing={2}>
