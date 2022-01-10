@@ -1,7 +1,7 @@
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 import LoginScreen from "@screens/account/LoginScreen";
 import SignUpScreen from "@screens/account/SignUpScreen";
-import Dashboard from "@screens/main/Dashboard";
+import Dashboard from "@screens/dashboard/Dashboard";
 import { Box } from "@mui/material";
 
 export default function App() {

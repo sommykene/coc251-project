@@ -1,5 +1,5 @@
-import ContentContainer from "@components/ContentContainer";
-import Sidebar from "@components/SideBar";
+import ContentContainer from "./layout/ContentContainer";
+import Sidebar from "./layout/SideBar";
 import { Box, CssBaseline } from "@mui/material";
 
 export default function Dashboard() {
