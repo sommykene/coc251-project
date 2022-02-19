@@ -1,0 +1,13 @@
+type Lesson @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  subtitle: String
+}
+
+type LessonWord @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  igbo: String
+  english: String
+  meaning: String
+  example: AWSJSON
+}
