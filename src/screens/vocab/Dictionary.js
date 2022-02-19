@@ -14,7 +14,6 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
-  // height: "100%",
 }));
 
 const fetchData = (word, callback) => {
@@ -55,7 +54,7 @@ export default function Dictionary() {
         <h1>Search For Any Word - English or Igbo</h1>
         <TextField
           id="outlined-basic"
-          label="Outlined"
+          label="English or Igbo Word"
           variant="outlined"
           sx={{ width: "100%" }}
           value={searchWord}

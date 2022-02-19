@@ -10,6 +10,8 @@ import {
   faSpellCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, Outlet } from "react-router-dom";
+import igboApiLogo from "@assets/images/igboapilogo.jpg";
+import { Box } from "@mui/material";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -20,7 +22,9 @@ const Item = styled(Paper)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-evenly",
-  "&:hover": { color: "pink", cursor: "pointer" },
+  alignItems: "center",
+  color: "black",
+  "&:hover": { color: "orange", cursor: "pointer" },
 }));
 
 const FaIcon = styled(FontAwesomeIcon)({
@@ -34,7 +38,7 @@ const StyledLink = styled(Link)(({ theme }) => ({
   height: "100%",
   flexDirection: "column",
   justifyContent: "space-evenly",
-  "&:hover": { color: "pink", cursor: "pointer" },
+  "&:hover": { color: "orange", cursor: "pointer" },
 }));
 
 export default function VocabHome() {
@@ -53,6 +57,15 @@ export default function VocabHome() {
         <StyledLink to="dictionary">
           <FaIcon icon={faSpellCheck} />
           <h1>Dictionary</h1>
+          <Box>
+            <span>Powered By</span>
+            <br />
+            <img
+              src={igboApiLogo}
+              width="60%"
+              style={{ alignSelf: "center" }}
+            />
+          </Box>
         </StyledLink>
       </Item>
       <Item>
